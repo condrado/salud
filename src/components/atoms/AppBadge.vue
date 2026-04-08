@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <div v-if="count > 0" class="badge">
+  <div class="badge" :class="{ empty: count === 0 }">
     {{ count }}
   </div>
 </template>
@@ -14,15 +14,21 @@ defineProps({
 .badge {
   background: var(--primary, #4CAF50);
   color: white;
-  border-radius: 8px; /* Cambiado de 50% a 8px */
-  min-width: 32px;
-  height: 32px;
+  border-radius: 8px;
+  min-width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem; /* Más grande */
-  font-weight: 800;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0 6px;
+  transition: all 0.3s;
+}
+
+.empty {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-weight: 400;
 }
 </style>

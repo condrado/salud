@@ -22,21 +22,19 @@ const handleDecrement = () => {
 <template>
   <div class="meal-card" @click="handleIncrement">
     <div class="main-info">
+      <!-- Ahora el número informativo va al principio -->
+      <AppBadge :count="meal.count" class="meal-count-info" />
       <span class="meal-name">{{ meal.name }}</span>
-      
-      <div class="counter-stepper">
-        <button 
-          v-if="meal.count > 0" 
-          class="minus-btn" 
-          @click.stop="handleDecrement"
-        >
-          -
-        </button>
-        <AppBadge :count="meal.count" />
-      </div>
     </div>
     
     <div class="actions">
+      <button 
+        v-if="meal.count > 0" 
+        class="minus-btn" 
+        @click.stop="handleDecrement"
+      >
+        -
+      </button>
       <button class="info-icon-btn" @click.stop="$emit('show-info', meal)">
         <AppIcon name="info" size="18" color="#94a3b8" />
       </button>
