@@ -64,6 +64,9 @@ const navItems = [
 }
 
 .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 8px;
   border-radius: 12px;
   transition: all 0.3s;
