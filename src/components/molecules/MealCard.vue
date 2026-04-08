@@ -1,6 +1,7 @@
 <script setup>
 import { actions } from '@/store';
 import AppBadge from '@/components/atoms/AppBadge.vue';
+import AppIcon from '@/components/atoms/AppIcon.vue';
 
 const props = defineProps({
   meal: { type: Object, required: true },
@@ -16,61 +17,69 @@ const handleIncrement = () => {
 
 <template>
   <div class="meal-card" @click="handleIncrement">
-    <div class="card-content">
+    <div class="main-info">
       <span class="meal-name">{{ meal.name }}</span>
       <AppBadge :count="meal.count" />
     </div>
-    <button class="info-btn" @click.stop="$emit('show-info', meal)">
-      ℹ️ Info
-    </button>
+    
+    <div class="actions">
+      <button class="info-icon-btn" @click.stop="$emit('show-info', meal)">
+        <AppIcon name="info" size="18" color="#94a3b8" />
+      </button>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .meal-card {
   background: white;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 12px;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 8px; /* Tighter spacing */
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  border: 1px solid #f0f0f0;
-  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.15s ease-out;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-  min-height: 100px;
+  min-height: 54px; /* Very compact height */
 }
 
 .meal-card:active {
-  transform: scale(0.97);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  background: #fdfdfd;
+  transform: scale(0.98);
+  background: #f1f5f9;
 }
 
-.card-content {
+.main-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 12px;
   flex: 1;
 }
 
 .meal-name {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.2;
 }
 
-.info-btn {
-  align-self: flex-end;
-  background: #f5f5f5;
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.info-icon-btn {
+  background: transparent;
   border: none;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 10px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.info-icon-btn:hover {
+  opacity: 1;
 }
 </style>

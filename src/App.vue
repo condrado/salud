@@ -14,41 +14,57 @@ const handleNavigation = (view) => {
 </script>
 
 <template>
-  <div class="app-container">
-    <!-- Renderizado condicional para evitar dependencias externas como vue-router en este paso simple -->
-    <template v-if="['desayuno', 'comida', 'merienda', 'cena'].includes(activeView)">
-      <MealsView :viewType="activeView" :key="activeView" />
-    </template>
-    
-    <template v-else-if="activeView === 'compra'">
-      <ShoppingView />
-    </template>
-    
-    <template v-else-if="activeView === 'deporte'">
-      <SportsView />
-    </template>
+  <div class="app-wrapper">
+    <div class="mobile-container">
+      <template v-if="['desayuno', 'comida', 'merienda', 'cena'].includes(activeView)">
+        <MealsView :viewType="activeView" :key="activeView" />
+      </template>
+      
+      <template v-else-if="activeView === 'compra'">
+        <ShoppingView />
+      </template>
+      
+      <template v-else-if="activeView === 'deporte'">
+        <SportsView />
+      </template>
 
-    <BottomNav :activeView="activeView" @navigate="handleNavigation" />
+      <BottomNav :activeView="activeView" @navigate="handleNavigation" />
+    </div>
   </div>
 </template>
 
 <style>
-/* Estilos globales y reset específicos de la aplicación premium */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+
 :root {
-  --primary-color: #4CAF50;
-  --bg-color: #f8fafc;
+  --primary: #4CAF50;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Outfit', sans-serif; /* Si estuviera disponible, si no sans-serif */
-  background-color: var(--bg-color);
-  -webkit-font-smoothing: antialiased;
+  background-color: #eaeff2;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  overscroll-behavior: none;
 }
 
-.app-container {
-  max-width: 500px;
-  margin: 0 auto;
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 430px; /* Tamaño iPhone Max */
+  background: var(--bg);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
 }
 </style>

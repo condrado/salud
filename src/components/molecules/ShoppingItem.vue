@@ -11,60 +11,58 @@ const handleToggle = () => {
 </script>
 
 <template>
-  <div class="shopping-item" :class="{ checked: item.checked }" @click="handleToggle">
-    <div class="checkbox">
-      <span v-if="item.checked">✓</span>
-    </div>
-    <span class="item-name">{{ item.name }}</span>
+  <div class="compact-shopping-item" :class="{ checked: item.checked }" @click="handleToggle">
+    <div class="dot-indicator"></div>
+    <span class="item-label">{{ item.name }}</span>
   </div>
 </template>
 
 <style scoped>
-.shopping-item {
+.compact-shopping-item {
   display: flex;
   align-items: center;
-  padding: 14px 16px;
+  padding: 10px 14px;
   background: white;
-  border-radius: 12px;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  transition: all 0.2s;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
   cursor: pointer;
-  user-select: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3px solid transparent;
 }
 
-.shopping-item:active {
-  transform: scale(0.98);
-  opacity: 0.8;
-}
-
-.checkbox {
-  width: 24px;
-  height: 24px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e2e8f0;
   margin-right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4CAF50;
-  font-weight: bold;
-  transition: border-color 0.2s, background-color 0.2s;
+  transition: all 0.2s;
 }
 
-.item-name {
-  font-size: 1rem;
-  color: #444;
-  transition: color 0.2s, text-decoration 0.2s;
+.item-label {
+  font-size: 0.85rem;
+  color: #334155;
+  font-weight: 500;
 }
 
-.checked .checkbox {
-  border-color: #4CAF50;
-  background-color: #e8f5e9;
+.checked {
+  background: #f8fafc;
+  opacity: 0.6;
+  border-left-color: #94a3b8;
 }
 
-.checked .item-name {
-  color: #ccc;
+.checked .dot-indicator {
+  background: #94a3b8;
+  transform: scale(0.8);
+}
+
+.checked .item-label {
   text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.compact-shopping-item:active {
+  transform: translateX(4px);
+  background: #f1f5f9;
 }
 </style>
