@@ -72,7 +72,8 @@ const initialState = {
 };
 
 const savedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
-export const store = reactive(savedState || initialState);
+// Fusionamos el estado guardado con el inicial para asegurar que nuevas claves como startDate existan
+export const store = reactive({ ...initialState, ...savedState });
 
 watch(store, (newState) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(newState));
