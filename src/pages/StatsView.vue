@@ -64,10 +64,7 @@ const ingredientTrends = computed(() => {
 
       <!-- Análisis de Ingredientes -->
       <section class="stat-section">
-        <div class="section-title">
-          <AppIcon name="alert" size="20" color="#f87171" />
-          <h3>Alerta de Ingredientes</h3>
-        </div>
+        <h3>Alerta de Ingredientes</h3>
         <p class="section-desc">Ingredientes que más estás repitiendo</p>
         <div class="ingredient-grid">
           <div v-for="[name, count] in ingredientTrends" :key="name" class="trend-pill">
@@ -79,14 +76,11 @@ const ingredientTrends = computed(() => {
 
       <!-- Top 5 Mas Consumidos -->
       <section class="stat-section">
-        <div class="section-title">
-          <AppIcon name="star" size="20" color="#fbbf24" />
-          <h3>Favoritos (Top 5)</h3>
-        </div>
+        <h3>Favoritos (Top 5)</h3>
         <div class="stat-list">
           <div v-for="meal in topMeals" :key="meal.id" class="stat-item">
             <div class="bar-bg">
-              <div class="bar-fill" :style="{ width: (meal.count / topMeals[0].count * 100) + '%' }"></div>
+              <div class="bar-fill" :style="{ width: (meal.count / (topMeals[0]?.count || 1) * 100) + '%' }"></div>
             </div>
             <div class="item-content">
               <span class="name">{{ meal.name }}</span>
@@ -98,10 +92,7 @@ const ingredientTrends = computed(() => {
 
       <!-- Los menos elegidos -->
       <section class="stat-section">
-        <div class="section-title">
-          <AppIcon name="search" size="20" color="#64748b" />
-          <h3>¿Olvidamos estos?</h3>
-        </div>
+        <h3>¿Olvidamos estos?</h3>
         <p class="section-desc">Platos que apenas has probado (Dales una oportunidad)</p>
         <div class="forgotten-grid">
           <div v-for="meal in leastMeals" :key="meal.id" class="forgotten-badge">
@@ -145,7 +136,7 @@ const ingredientTrends = computed(() => {
 .stat-section {
   background: white;
   border-radius: 20px;
-  padding: 20px;
+  padding: 16px; /* Reducido de 20px */
   margin-bottom: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
@@ -153,8 +144,9 @@ const ingredientTrends = computed(() => {
 .section-title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px; /* Reducido un poco */
   margin-bottom: 6px;
+  margin-left: -2px; /* Ajuste fino para pegar el icono al borde si es necesario */
 }
 
 h3 {
