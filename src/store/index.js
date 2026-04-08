@@ -3,6 +3,7 @@ import { reactive, watch } from 'vue';
 const STORAGE_KEY = 'salud_app_data_v2';
 
 const initialState = {
+  startDate: '2026-04-13', // Lunes 13 de Abril de 2026
   meals: {
     desayuno: [
       { id: 1, name: 'Tostadas con Pavo', ingredients: 'Pan integral, Pechuga de pavo extra (90%)', prep: 'Tostar el pan y añadir el pavo.', count: 0 },
