@@ -64,7 +64,10 @@ const ingredientTrends = computed(() => {
 
       <!-- Análisis de Ingredientes -->
       <section class="stat-section">
-        <h3>🚨 Alerta de Ingredientes</h3>
+        <div class="section-title">
+          <AppIcon name="alert" size="20" color="#f87171" />
+          <h3>Alerta de Ingredientes</h3>
+        </div>
         <p class="section-desc">Ingredientes que más estás repitiendo</p>
         <div class="ingredient-grid">
           <div v-for="[name, count] in ingredientTrends" :key="name" class="trend-pill">
@@ -76,7 +79,10 @@ const ingredientTrends = computed(() => {
 
       <!-- Top 5 Mas Consumidos -->
       <section class="stat-section">
-        <h3>⭐ Favoritos (Top 5)</h3>
+        <div class="section-title">
+          <AppIcon name="star" size="20" color="#fbbf24" />
+          <h3>Favoritos (Top 5)</h3>
+        </div>
         <div class="stat-list">
           <div v-for="meal in topMeals" :key="meal.id" class="stat-item">
             <div class="bar-bg">
@@ -92,7 +98,10 @@ const ingredientTrends = computed(() => {
 
       <!-- Los menos elegidos -->
       <section class="stat-section">
-        <h3>🔍 ¿Olvidamos estos?</h3>
+        <div class="section-title">
+          <AppIcon name="search" size="20" color="#64748b" />
+          <h3>¿Olvidamos estos?</h3>
+        </div>
         <p class="section-desc">Platos que apenas has probado (Dales una oportunidad)</p>
         <div class="forgotten-grid">
           <div v-for="meal in leastMeals" :key="meal.id" class="forgotten-badge">
@@ -141,8 +150,15 @@ const ingredientTrends = computed(() => {
   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
 h3 {
-  margin: 0 0 4px 0;
+  margin: 0;
   font-size: 1rem;
   color: #1e293b;
 }

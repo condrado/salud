@@ -1,5 +1,6 @@
 <script setup>
 import MainLayout from '@/components/templates/MainLayout.vue';
+import AppIcon from '@/components/atoms/AppIcon.vue';
 import { store } from '@/store';
 </script>
 
@@ -8,7 +9,9 @@ import { store } from '@/store';
     <div class="sports-view">
       <!-- Sección Caminata -->
       <section class="exercise-section walk">
-        <div class="icon-header">🚶♂️</div>
+        <div class="icon-header">
+          <AppIcon name="run" size="40" color="#ffffff" />
+        </div>
         <div class="details">
           <h3>Caminata "Quemagrasas"</h3>
           <p class="time">45 minutos • 5 días/semana</p>
@@ -18,8 +21,10 @@ import { store } from '@/store';
 
       <!-- Sección Circuito Fuerza -->
       <section class="exercise-section strength">
-        <div class="icon-header">💪</div>
-        <h3>Circuito de Fuerza (15 min)</h3>
+        <div class="icon-header-small">
+          <AppIcon name="bolt" size="32" color="#4CAF50" />
+          <h3>Circuito de Fuerza (15 min)</h3>
+        </div>
         <p class="subtitle">Hazlo justo al llegar de caminar</p>
         
         <div class="exercise-card">
