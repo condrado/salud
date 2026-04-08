@@ -108,6 +108,7 @@ const initialState = {
   ],
   shoppingFilter: 'Todos',
   lastCancelledReminder: null,
+  walkingDays: [],
   rules: [
     'Regla 120 min: No tumbarse antes de 2h tras cenar.',
     'Masticación: Masticar 20 veces cada bocado.',
@@ -123,6 +124,7 @@ const savedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 export const store = reactive({ 
   ...initialState, 
   ...savedState,
+  walkingDays: savedState.walkingDays || [],
   meals: initialState.meals,
   shoppingList: initialState.shoppingList 
 });
@@ -155,6 +157,14 @@ export const actions = {
   decrementMeal(type, id) {
     const meal = store.meals[type].find(m => m.id === id);
     if (meal && meal.count > 0) meal.count--;
+  },
+  toggleWalking(date) {
+    const index = store.walkingDays.indexOf(date);
+    if (index === -1) {
+      store.walkingDays.push(date);
+    } else {
+      store.walkingDays.splice(index, 1);
+    }
   },
   toggleItem(id) {
     const item = store.shoppingList.find(i => i.id === id);
