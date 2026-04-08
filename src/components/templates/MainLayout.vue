@@ -29,34 +29,36 @@ const props = defineProps({
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f8fafc;
-  padding-bottom: 80px; /* Space for nav */
+  background: #f1f5f9; /* Soft background to pop cards */
+  padding-bottom: 80px; 
 }
 
 .header {
-  background: white;
-  padding: 20px 0 10px;
+  background: #0f172a; /* Mismo color que el footer */
+  padding: 18px 0 14px;
   position: sticky;
   top: 0;
   z-index: 800;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 0 0 24px 24px; /* Simetría con el footer */
 }
 
 .container {
-  padding: 0 20px;
+  padding: 0 24px;
   max-width: 600px;
   margin: 0 auto;
 }
 
 h1 {
-  font-size: 1.5rem;
-  color: #2c3e50;
+  font-size: 1.35rem;
+  color: #ffffff; /* Texto blanco elegante */
   margin: 0;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .content {
   flex: 1;
-  padding-top: 20px;
+  padding-top: 16px;
 }
 </style>
