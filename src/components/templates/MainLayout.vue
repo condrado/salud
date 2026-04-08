@@ -22,7 +22,7 @@ const planStatus = computed(() => {
   } else if (diffDays <= 0 && diffDays > -14) {
     return `Día ${Math.abs(diffDays) + 1} de 14`;
   } else {
-    return '¡Reto completado! 🎉';
+    return 'Reto completado';
   }
 });
 </script>
@@ -83,14 +83,14 @@ const planStatus = computed(() => {
 }
 
 .header-date {
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.6); /* Blanco con opacidad para jerarquía */
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .header-status {
-  color: #4CAF50;
+  color: #ffffff; /* Blanco puro para el contador */
   font-size: 0.85rem;
   font-weight: 800;
 }
