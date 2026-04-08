@@ -13,7 +13,10 @@ const handleToggle = () => {
 <template>
   <div class="compact-shopping-item" :class="{ checked: item.checked }" @click="handleToggle">
     <div class="dot-indicator"></div>
-    <span class="item-label">{{ item.name }}</span>
+    <div class="item-details">
+      <span class="item-label">{{ item.name }}</span>
+      <span v-if="item.qty" class="item-qty">{{ item.qty }}</span>
+    </div>
     <span v-if="item.freq" class="freq-badge" :class="item.freq.toLowerCase()">{{ item.freq }}</span>
   </div>
 </template>
@@ -40,10 +43,23 @@ const handleToggle = () => {
   transition: all 0.2s;
 }
 
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
 .item-label {
-  font-size: 0.85rem;
-  color: #334155;
-  font-weight: 500;
+  font-size: 0.88rem;
+  color: #1e293b;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.item-qty {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 400;
+  margin-top: 1px;
 }
 
 .checked {
@@ -57,7 +73,7 @@ const handleToggle = () => {
   transform: scale(0.8);
 }
 
-.checked .item-label {
+.checked .item-label, .checked .item-qty {
   text-decoration: line-through;
   color: #94a3b8;
 }

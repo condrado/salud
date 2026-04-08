@@ -19,7 +19,7 @@ const initialState = {
       { id: 105, name: 'Día 5: Solomillo Boniato', ingredients: '150g solomillo cerdo, 150g boniato, canónigos.', prep: 'Boniato al micro 6 min. Solomillo plancha. Acompañar con canónigos frescos.', count: 0 },
       { id: 106, name: 'Día 6: Ensalada Quinoa', ingredients: '1 vasito quinoa, 150g pechuga pollo, 100g zanahoria, 50g maíz.', prep: 'Mezclar quinoa (1 min micro) con tiras de pollo a la plancha y vegetales crudos.', count: 0 },
       { id: 107, name: 'Día 7: Guiso Pavo Patata', ingredients: '150g pavo guisar, 150g patata, 100g zanahoria.', prep: 'Sellar pavo. Añadir agua, patata y zanahoria cascada. Hervir 25 min a fuego lento.', count: 0 },
-      { id: 108, name: 'Día 8: Salmón Vapor', ingredients: '150g salmón fresco, 150g patata pequeña.', prep: 'En estuche vapor: patata en rodajas y salmón. Sal/eneldo. 5 min microondas.', count: 0 },
+      { id: 108, name: 'Día 8: Salmón Vapor', ingredients: '150g salmón fresco, 150g patata pequeña.', prep: 'En estuche vapor: patata en rodajas and salmón. Sal/eneldo. 5 min microondas.', count: 0 },
       { id: 109, name: 'Día 9: Lomo con Puré', ingredients: '150g lomo cerdo, 150g patata, chorrito leche desnatada.', prep: 'Hervir patata y chafar con leche. Lomo a la plancha vuelta y vuelta.', count: 0 },
       { id: 110, name: 'Día 10: Alubias Verdura', ingredients: '150g alubias blancas, 100g calabaza, 100g calabacín.', prep: 'Hervir verduras 10 min. Añadir alubias lavadas 3 min. Mucha fibra anti-colesterol.', count: 0 },
       { id: 111, name: 'Día 11: Arroz Pollo Bolsa', ingredients: '150g pollo, 50g arroz seco, zanahoria.', prep: 'Hacer pollo/zanahoria en bolsa de asar (6 min micro). Mezclar con arroz hervido.', count: 0 },
@@ -52,28 +52,43 @@ const initialState = {
     ]
   },
   shoppingList: [
-    { id: 10, name: 'Pechuga Pollo Entera (3 bandejas)', checked: false, cat: 'Súper / Proteína', freq: 'Quincenal' },
-    { id: 11, name: 'Solomillo Pavo/Dados (2 bandejas)', checked: false, cat: 'Súper / Proteína', freq: 'Quincenal' },
-    { id: 12, name: 'Solomillo/Lomo Cerdo (1 bandeja)', checked: false, cat: 'Súper / Proteína', freq: 'Quincenal' },
-    { id: 13, name: 'Huevos L (1 docena)', checked: false, cat: 'Súper / Proteína', freq: 'Semanal' },
-    { id: 14, name: 'Hamburguesas Pollo (Pack +Prot)', checked: false, cat: 'Súper / Proteína', freq: 'Quincenal' },
-    { id: 15, name: 'Salmón fresco (2 lomos)', checked: false, cat: 'Pescadería', freq: 'Diario' },
-    { id: 16, name: 'Tartar de Salmón (1 bandeja)', checked: false, cat: 'Pescadería', freq: 'Diario' },
-    { id: 17, name: 'Salmón ahumado (2 packs)', checked: false, cat: 'Lácteos/Fríos', freq: 'Semanal' },
-    { id: 20, name: 'Judías verdes / Espinacas (2 bolsas)', checked: false, cat: 'Congelados', freq: 'Quincenal' },
-    { id: 22, name: 'Ajetes tiernos (1 bolsa)', checked: false, cat: 'Congelados', freq: 'Quincenal' },
-    { id: 30, name: 'Patatas (Malla) / Boniato (1)', checked: false, cat: 'Despensa', freq: 'Quincenal' },
-    { id: 31, name: 'Arroz / Pasta Integral (1 pack)', checked: false, cat: 'Despensa', freq: 'Quincenal' },
-    { id: 32, name: 'Legumbres en bote (3 botes)', checked: false, cat: 'Despensa', freq: 'Quincenal' },
-    { id: 33, name: 'Copos Avena Finos (1 bolsa)', checked: false, cat: 'Despensa', freq: 'Quincenal' },
-    { id: 40, name: 'Manzanas (Malla) / Plátanos (1 mano)', checked: false, cat: 'Fruta', freq: 'Semanal' },
-    { id: 41, name: 'Calabacines (2) / Zanahorias (1kg)', checked: false, cat: 'Verdura', freq: 'Semanal' },
-    { id: 42, name: 'Canónigos (bolsa) / Champiñones (1)', checked: false, cat: 'Verdura', freq: 'Semanal' },
-    { id: 43, name: 'Aguacate (1/2 unidades)', checked: false, cat: 'Verdura', freq: 'Semanal' },
-    { id: 50, name: 'Queso Burgos / Bífidus (Pack)', checked: false, cat: 'Lácteos', freq: 'Semanal' },
-    { id: 51, name: 'Batidos +Proteínas (Pack)', checked: false, cat: 'Lácteos', freq: 'Semanal' },
-    { id: 60, name: 'Sushi Salmón/Atún (1 bandeja)', checked: false, cat: 'Día a Día', freq: 'Diario' }
+    { id: 10, name: 'Pechuga de pollo entera', qty: '3 bandejas', checked: false, cat: 'Carnes (Trocear a 150g)', freq: 'Quincenal' },
+    { id: 11, name: 'Solomillo de pavo', qty: '1 bandeja', checked: false, cat: 'Carnes (Trocear a 150g)', freq: 'Quincenal' },
+    { id: 12, name: 'Pavo para guisar en dados', qty: '1 bandeja', checked: false, cat: 'Carnes (Trocear a 150g)', freq: 'Quincenal' },
+    { id: 13, name: 'Solomillo de cerdo', qty: '1 bandeja', checked: false, cat: 'Carnes (Trocear a 150g)', freq: 'Quincenal' },
+    { id: 14, name: 'Lomo de cerdo cintas/filetes', qty: '1 bandeja', checked: false, cat: 'Carnes (Trocear a 150g)', freq: 'Quincenal' },
+    { id: 15, name: 'Hamburguesas de Pollo Alta Prot', qty: '1 pack', checked: false, cat: 'Carnes (Trocear a 150g)', freq: 'Quincenal' },
+    { id: 20, name: 'Judías Verdes congeladas', qty: '2 bolsas', checked: false, cat: 'Congelados', freq: 'Quincenal' },
+    { id: 21, name: 'Espinacas congeladas', qty: '1 bolsa', checked: false, cat: 'Congelados', freq: 'Quincenal' },
+    { id: 22, name: 'Ajetes tiernos congelados', qty: '1 bolsa', checked: false, cat: 'Congelados', freq: 'Quincenal' },
+    { id: 30, name: 'Patatas', qty: '1 malla', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 31, name: 'Arroz Integral', qty: '1 paquete', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 32, name: 'Macarrones Integrales', qty: '1 paquete', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 33, name: 'Lentejas cocidas', qty: '1 bote', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 34, name: 'Garbanzos cocidos', qty: '1 bote', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 35, name: 'Alubias blancas cocidas', qty: '1 bote', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 36, name: 'Espárragos blancos gruesos', qty: '1 bote', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 37, name: 'Atún al natural', qty: '3 latas', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 38, name: 'Altramuces', qty: '1 bote', checked: false, cat: 'Despensa', freq: 'Quincenal' },
+    { id: 50, name: 'Manzanas', qty: '1 malla', checked: false, cat: 'Fruta', freq: 'Semanal' },
+    { id: 51, name: 'Plátanos', qty: '1 mano', checked: false, cat: 'Fruta', freq: 'Semanal' },
+    { id: 52, name: 'Calabacines', qty: '2 unidades', checked: false, cat: 'Verdura Fresca', freq: 'Semanal' },
+    { id: 53, name: 'Zanahorias', qty: '1kg', checked: false, cat: 'Verdura Fresca', freq: 'Semanal' },
+    { id: 54, name: 'Boniato', qty: '1 unidad', checked: false, cat: 'Verdura Fresca', freq: 'Semanal' },
+    { id: 55, name: 'Champiñón fresco laminado', qty: '1 bandeja', checked: false, cat: 'Verdura Fresca', freq: 'Semanal' },
+    { id: 56, name: 'Canónigos', qty: '1 bolsa', checked: false, cat: 'Verdura Fresca', freq: 'Semanal' },
+    { id: 57, name: 'Huevos L', qty: '1 docena', checked: false, cat: 'Proteína Fresca', freq: 'Semanal' },
+    { id: 58, name: 'Queso Fresco de Burgos 0%', qty: '1 tarrina', checked: false, cat: 'Lácteos', freq: 'Semanal' },
+    { id: 59, name: 'Yogures Bífidus naturales', qty: '1 pack', checked: false, cat: 'Lácteos', freq: 'Semanal' },
+    { id: 60, name: 'Batidos/Yogures +Proteínas', qty: '1 pack', checked: false, cat: 'Lácteos', freq: 'Semanal' },
+    { id: 61, name: 'Jamón Cocido Extra', qty: '1 pack', checked: false, cat: 'Embutido Magro', freq: 'Semanal' },
+    { id: 62, name: 'Pechuga de Pavo Extra lonchas', qty: '1 pack', checked: false, cat: 'Embutido Magro', freq: 'Semanal' },
+    { id: 63, name: 'Salmón Ahumado', qty: '1 paquete', checked: false, cat: 'Proteína Fresca', freq: 'Semanal' },
+    { id: 80, name: 'Sushi Mercadona', qty: 'Días 3, 11 y 13', checked: false, cat: 'Día a Día', freq: 'Diario' },
+    { id: 81, name: 'Salmón Fresco', qty: 'Par de lomos', checked: false, cat: 'Pescadería', freq: 'Diario' }
   ],
+  shoppingFilter: 'Todos',
+  lastCancelledReminder: null,
   rules: [
     'Regla 120 min: No tumbarse antes de 2h tras cenar.',
     'Masticación: Masticar 20 veces cada bocado.',
@@ -83,7 +98,7 @@ const initialState = {
   ]
 };
 
-const STORAGE_KEY = 'salud_app_data_v4'; // Subimos a v4 para forzar las frecuencias
+const STORAGE_KEY = 'salud_app_data_v5'; // Subimos a v5 para cambiar la estructura a name/qty
 
 const savedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 export const store = reactive({ 
@@ -107,6 +122,12 @@ export const actions = {
   },
   setActiveView(view) {
     store.activeView = view;
+  },
+  setShoppingFilter(filter) {
+    store.shoppingFilter = filter;
+  },
+  cancelReminder(dateId) {
+    store.lastCancelledReminder = dateId;
   },
   incrementMeal(type, id) {
     const meal = store.meals[type].find(m => m.id === id);

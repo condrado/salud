@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { store, actions } from '@/store';
+import ReminderModal from '@/components/organisms/ReminderModal.vue';
 
 defineProps({
   title: { type: String, required: true }
@@ -38,6 +39,7 @@ const planStatus = computed(() => {
     </main>
     
     <!-- El BottomNav se gestiona en App.vue -->
+    <ReminderModal />
   </div>
 </template>
 

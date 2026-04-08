@@ -1,18 +1,16 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { store, actions } from '@/store';
 import MainLayout from '@/components/templates/MainLayout.vue';
 import ShoppingItem from '@/components/molecules/ShoppingItem.vue';
 import AppIcon from '@/components/atoms/AppIcon.vue';
 
-const filterFreq = ref('Todos');
-
 const categories = computed(() => {
   const cats = {};
   
   const filteredList = store.shoppingList.filter(item => {
-    if (filterFreq.value === 'Todos') return true;
-    return item.freq === filterFreq.value;
+    if (store.shoppingFilter === 'Todos') return true;
+    return item.freq === store.shoppingFilter;
   });
 
   filteredList.forEach(item => {
@@ -39,9 +37,13 @@ const totalItems = computed(() => store.shoppingList.length);
       </button>
     </div>
 
-    <!-- Filtro de Frecuencia -->
+    <!-- Filtro de Frecuencia Persistente -->
     <div class="filter-bar">
-      <select v-model="filterFreq" class="freq-select">
+      <select 
+        :value="store.shoppingFilter" 
+        @change="actions.setShoppingFilter($event.target.value)"
+        class="freq-select"
+      >
         <option value="Todos">Mostrar Todo</option>
         <option value="Diario">Compra Diaria</option>
         <option value="Semanal">Compra Semanal</option>
@@ -64,7 +66,7 @@ const totalItems = computed(() => store.shoppingList.length);
       </div>
       
       <div v-if="Object.keys(categories).length === 0" class="empty-filter">
-        No hay elementos con frecuencia "{{ filterFreq }}"
+        No hay elementos con frecuencia "{{ store.shoppingFilter }}"
       </div>
     </div>
   </MainLayout>
@@ -96,7 +98,7 @@ const totalItems = computed(() => store.shoppingList.length);
   font-weight: 600;
   font-size: 0.9rem;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='flex-direction: column;M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;
