@@ -12,23 +12,17 @@ defineProps({
 
 <style scoped>
 .badge {
-  background: var(--primary, #4CAF50);
-  color: white;
-  border-radius: 8px;
-  min-width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  font-weight: 700;
-  padding: 0 6px;
+  color: var(--primary, #4CAF50);
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-right: 4px; /* Pequeño espacio con el nombre */
   transition: all 0.3s;
+  line-height: 1;
 }
 
 .empty {
-  background: #f1f5f9;
-  color: #94a3b8;
-  font-weight: 400;
+  color: #cbd5e1; /* Gris muy clarito para el 0 */
+  font-weight: 500;
 }
 </style>
