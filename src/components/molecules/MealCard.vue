@@ -81,25 +81,29 @@ const handleDecrement = () => {
 .counter-stepper {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px; /* Pegaditos para que parezca una pieza única */
 }
 
 .minus-btn {
-  background: #fee2e2;
-  color: #ef4444;
+  background: #f1f5f9; /* Color más neutro y elegante */
+  color: #64748b;
   border: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px; /* Cuadradito redondeado */
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 1.4rem; /* Símbolo bien grande y táctil */
   cursor: pointer;
   line-height: 0;
-  box-shadow: 0 1px 2px rgba(239, 68, 68, 0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.minus-btn:active {
+  background: #e2e8f0;
 }
 
 .actions {

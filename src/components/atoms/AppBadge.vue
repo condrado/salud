@@ -12,16 +12,17 @@ defineProps({
 
 <style scoped>
 .badge {
-  background: var(--primary-color, #4CAF50);
+  background: var(--primary, #4CAF50);
   color: white;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  border-radius: 8px; /* Cambiado de 50% a 8px */
+  min-width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-size: 1rem; /* Más grande */
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 0 8px;
 }
 </style>
