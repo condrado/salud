@@ -7,7 +7,7 @@ const initialState = {
     "desayuno": [
       { "id": 1, "name": "El Clásico", "ingredients": "1 tostada pan 100% integral (60g), 1 tarrina Queso Burgos 0%, 2 lonchas pavo, vaso leche desnatada/avena.", "prep": "Tostar pan. Poner queso y pavo. Café descafeinado o infusión con leche/avena.", "count": 0 },
       { "id": 2, "name": "El Nórdico", "ingredients": "1 tostada pan 100% integral, 1/4 aguacate chafado (capa fina), 1 loncha salmón ahumado.", "prep": "Chafar aguacate en capa fina. Añadir salmón. No abusar de la grasa.", "count": 0 },
-      { "id": 3, "name": "El Dulce Digestivo", "ingredients": "1 Yogur Bífidus Natural, 30g copos de avena finos, media banana madura.", "prep": "Banana madura protege mucosa. Mezclar todo. Digestivo.", "count": 0 },
+      { "id": 3, "name": "El Dulce Digestivo", "ingredients": "1 Yogur Bífidus Natural, 30g copos de avena finos, un platano.", "prep": "El plátano protege la mucosa. Mezclar todo. Digestivo.", "count": 0 },
       { "id": 4, "name": "El Proteico", "ingredients": "1 huevo entero + 1 clara (sartén antiadherente, casi sin aceite), 1 tostada integral.", "prep": "Huevos revueltos sobre tostada. Proteína limpia.", "count": 0 },
       { "id": 5, "name": "El Rápido", "ingredients": "1 batido '+Proteínas' (Vainilla/Fresa), 3 nueces naturales, 1 manzana sin piel.", "prep": "Tomar batido frío. Picar nueces. Pelar manzana para hiato.", "count": 0 }
     ],
