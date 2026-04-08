@@ -13,13 +13,27 @@ const emit = defineEmits(['show-info']);
 const handleIncrement = () => {
   actions.incrementMeal(props.type, props.meal.id);
 };
+
+const handleDecrement = () => {
+  actions.decrementMeal(props.type, props.meal.id);
+};
 </script>
 
 <template>
   <div class="meal-card" @click="handleIncrement">
     <div class="main-info">
       <span class="meal-name">{{ meal.name }}</span>
-      <AppBadge :count="meal.count" />
+      
+      <div class="counter-stepper">
+        <button 
+          v-if="meal.count > 0" 
+          class="minus-btn" 
+          @click.stop="handleDecrement"
+        >
+          -
+        </button>
+        <AppBadge :count="meal.count" />
+      </div>
     </div>
     
     <div class="actions">
@@ -34,20 +48,20 @@ const handleIncrement = () => {
 .meal-card {
   background: white;
   border-radius: 12px;
-  padding: 12px 16px;
-  margin-bottom: 8px; /* Tighter spacing */
+  padding: 10px 16px;
+  margin-bottom: 8px; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Tighter shadows for less bulk */
   transition: all 0.15s ease-out;
   user-select: none;
-  min-height: 54px; /* Very compact height */
+  min-height: 50px; 
 }
 
 .meal-card:active {
-  transform: scale(0.98);
-  background: #f1f5f9;
+  transform: scale(0.99);
+  background: #f8fafc;
 }
 
 .main-info {
@@ -59,9 +73,33 @@ const handleIncrement = () => {
 
 .meal-name {
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #1e293b;
-  line-height: 1.2;
+  line-height: 1.1;
+}
+
+.counter-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minus-btn {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 0;
+  box-shadow: 0 1px 2px rgba(239, 68, 68, 0.1);
 }
 
 .actions {

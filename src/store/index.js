@@ -82,6 +82,10 @@ export const actions = {
     const meal = store.meals[type].find(m => m.id === id);
     if (meal) meal.count++;
   },
+  decrementMeal(type, id) {
+    const meal = store.meals[type].find(m => m.id === id);
+    if (meal && meal.count > 0) meal.count--;
+  },
   toggleItem(id) {
     const item = store.shoppingList.find(i => i.id === id);
     if (item) item.checked = !item.checked;
