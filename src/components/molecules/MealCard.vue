@@ -21,6 +21,13 @@ const handleDecrement = () => {
 
 <template>
   <div class="meal-card" @click="handleIncrement">
+    <!-- Franja de dificultad -->
+    <div 
+      v-if="meal.difficulty" 
+      class="difficulty-indicator"
+      :class="meal.difficulty"
+    ></div>
+
     <div class="main-info">
       <AppBadge :count="meal.count" />
       <span class="meal-name">{{ meal.name }}</span>
@@ -45,6 +52,7 @@ const handleDecrement = () => {
 
 <style scoped>
 .meal-card {
+  position: relative;
   background: white;
   border-radius: 12px;
   padding: 4px 12px; /* Tighter vertical padding */
@@ -55,7 +63,21 @@ const handleDecrement = () => {
   transition: all 0.2s;
   user-select: none;
   min-height: 44px; /* Even more compact */
+  overflow: hidden; /* Para que la franja herede el border-radius */
 }
+
+.difficulty-indicator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  transition: background-color 0.3s;
+}
+
+.difficulty-indicator.red { background: #ef4444; }
+.difficulty-indicator.yellow { background: #eab308; }
+.difficulty-indicator.green { background: #22c55e; }
 
 .meal-card:active {
   transform: scale(0.995);
