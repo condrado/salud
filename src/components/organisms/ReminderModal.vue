@@ -21,9 +21,8 @@ const checkReminder = () => {
   const currentHour = now.getHours();
   const weekId = getWeekId();
 
-  // MODO PRUEBA: Miércoles (3) después de las 14h
-  // CAMBIAR A: currentDay === 5 && currentHour >= 15 para producción
-  const isTriggerTime = currentDay === 3 && currentHour >= 14; 
+  // Viernes (5) después de las 15h
+  const isTriggerTime = currentDay === 5 && currentHour >= 15; 
   
   const alreadyCancelled = store.lastCancelledReminder === weekId; 
 
