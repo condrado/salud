@@ -52,7 +52,7 @@ import { store } from '@/store';
 
       <!-- Normas Sagradas -->
       <section class="rules-section">
-        <h3>🛡️ Normas Sagradas</h3>
+        <h3>Normas Sagradas</h3>
         <ul>
           <li v-for="(rule, index) in store.rules" :key="index">
             {{ rule }}
