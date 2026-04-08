@@ -13,7 +13,8 @@ const icons = {
   dinner: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2 M15 2v12a3 3 0 0 0 6 0V2 M18 20v2 M15 20v2 M21 20v2',
   cart: 'M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6',
   bolt: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
-  info: 'M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z'
+  info: 'M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z',
+  minus: 'M5 12h14' // Icono de restar minimalista
 };
 </script>
 

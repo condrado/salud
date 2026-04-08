@@ -30,12 +30,12 @@ const handleDecrement = () => {
     <div class="actions">
       <button 
         v-if="meal.count > 0" 
-        class="minus-btn" 
+        class="action-btn minus" 
         @click.stop="handleDecrement"
       >
-        -
+        <AppIcon name="minus" size="18" color="#64748b" />
       </button>
-      <button class="info-icon-btn" @click.stop="$emit('show-info', meal)">
+      <button class="action-btn info" @click.stop="$emit('show-info', meal)">
         <AppIcon name="info" size="18" color="#94a3b8" />
       </button>
     </div>
@@ -46,15 +46,15 @@ const handleDecrement = () => {
 .meal-card {
   background: white;
   border-radius: 12px;
-  padding: 10px 16px;
+  padding: 8px 16px;
   margin-bottom: 8px; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Tighter shadows for less bulk */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
   transition: all 0.15s ease-out;
   user-select: none;
-  min-height: 50px; 
+  min-height: 48px; 
 }
 
 .meal-card:active {
@@ -76,50 +76,34 @@ const handleDecrement = () => {
   line-height: 1.1;
 }
 
-.counter-stepper {
+.actions {
   display: flex;
   align-items: center;
-  gap: 4px; /* Pegaditos para que parezca una pieza única */
+  gap: 8px; /* Espacio simétrico entre los dos botones */
 }
 
-.minus-btn {
-  background: #f1f5f9; /* Color más neutro y elegante */
-  color: #64748b;
+/* Botones de acción unificados (Simetría Total) */
+.action-btn {
+  background: #f1f5f9; /* Fondo suave e idéntico para ambos */
   border: none;
   width: 32px;
   height: 32px;
-  border-radius: 8px; /* Cuadradito redondeado */
+  border-radius: 8px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
-  font-size: 1.4rem; /* Símbolo bien grande y táctil */
   cursor: pointer;
-  line-height: 0;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
-.minus-btn:active {
+.action-btn:active {
   background: #e2e8f0;
+  transform: scale(0.95);
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-}
-
-.info-icon-btn {
-  background: transparent;
-  border: none;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-}
-
-.info-icon-btn:hover {
-  opacity: 1;
+.action-btn.minus {
+  background: #fff5f5; /* Un tono muy leve rojizo para el menos */
 }
 </style>
