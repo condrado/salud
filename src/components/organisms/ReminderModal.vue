@@ -25,7 +25,7 @@ const checkReminder = () => {
   // CAMBIAR A: currentDay === 5 && currentHour >= 15 para producción
   const isTriggerTime = currentDay === 3 && currentHour >= 14; 
   
-  const alreadyCancelled = store.lastCancelledReminder === weekId;
+  const alreadyCancelled = store.lastCancelledReminder === weekId; 
 
   if (isTriggerTime && !alreadyCancelled) {
     show.value = true;
