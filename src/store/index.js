@@ -5,7 +5,7 @@ const initialState = {
   startDate: '2026-03-30', // Lunes 30 de Marzo de 2026
   "meals": {
     "desayuno": [
-      { "id": 1, "name": "El Clásico", "ingredients": "1 tostada pan 100% integral (60g), 1 tarrina Queso Burgos 0%, 2 lonchas pavo, chorrito leche desnatada/avena.", "prep": "Tostar pan. Poner queso y pavo. Café descafeinado o infusión con leche/avena.", "count": 0 },
+      { "id": 1, "name": "El Clásico", "ingredients": "1 tostada pan 100% integral (60g), 1 tarrina Queso Burgos 0%, 2 lonchas pavo, vaso leche desnatada/avena.", "prep": "Tostar pan. Poner queso y pavo. Café descafeinado o infusión con leche/avena.", "count": 0 },
       { "id": 2, "name": "El Nórdico", "ingredients": "1 tostada pan 100% integral, 1/4 aguacate chafado (capa fina), 1 loncha salmón ahumado.", "prep": "Chafar aguacate en capa fina. Añadir salmón. No abusar de la grasa.", "count": 0 },
       { "id": 3, "name": "El Dulce Digestivo", "ingredients": "1 Yogur Bífidus Natural, 30g copos de avena finos, media banana madura.", "prep": "Banana madura protege mucosa. Mezclar todo. Digestivo.", "count": 0 },
       { "id": 4, "name": "El Proteico", "ingredients": "1 huevo entero + 1 clara (sartén antiadherente, casi sin aceite), 1 tostada integral.", "prep": "Huevos revueltos sobre tostada. Proteína limpia.", "count": 0 },
@@ -20,7 +20,7 @@ const initialState = {
       { "id": 106, "name": "Día 6: Ensalada Quinoa", "ingredients": "1 vasito quinoa, 150g pechuga pollo, 100g zanahoria rallada, 50g maíz.", "prep": "Quinoa 1 min micro. Pollo plancha en tiras. Mezclar todo.", "count": 0 },
       { "id": 107, "name": "Día 7: Guiso Pavo y Patata", "ingredients": "150g pavo guisar, 150g patata, 100g zanahoria, sal.", "prep": "Sellar pavo. Añadir agua, verdura y patata 'cascada'. Hervir 25 min fuego lento.", "count": 0 },
       { "id": 108, "name": "Día 8: Salmón Vapor con Patata", "ingredients": "150g lomo salmón fresco, 150g patata pequeña, AOVE, sal.", "prep": "Estuche vapor/bolsa: patata rodajas y salmón. Sal/AOVE. 5 min microondas.", "count": 0 },
-      { "id": 109, "name": "Día 9: Lomo con Puré de Patata", "ingredients": "150g lomo cerdo, 150g patata, chorrito leche desnatada, sal.", "prep": "Hervir y chafar patata con leche. Lomo a la plancha suave.", "count": 0 },
+      { "id": 109, "name": "Día 9: Lomo con Puré de Patata", "ingredients": "150g lomo cerdo, 150g patata, vaso leche desnatada, sal.", "prep": "Hervir y chafar patata con leche. Lomo a la plancha suave.", "count": 0 },
       { "id": 110, "name": "Día 10: Alubias Blancas con Verduras", "ingredients": "150g alubias blancas (bote), 100g calabaza, 100g calabacín, AOVE.", "prep": "Hervir verduras dados 10 min. Añadir alubias lavadas 3 min.", "count": 0 },
       { "id": 111, "name": "Día 11: Arroz con Pollo en Bolsa", "ingredients": "150g pollo, 50g arroz crudo, zanahoria.", "prep": "Arroz hervido. Pollo/zanahoria en bolsa Mercadona (Micro 6m / Horno 20m). Mezclar.", "count": 0 },
       { "id": 112, "name": "Día 12: Pasta Integral con Pavo", "ingredients": "50g pasta integral, 100g fiambre pavo extra, calabacín, AOVE.", "prep": "Hierve pasta. Dados calabacín/pavo salteados. Mezclar.", "count": 0 },
@@ -36,7 +36,7 @@ const initialState = {
     ],
     "cena": [
       { "id": 301, "name": "Día 1: Tortilla y Espárragos", "ingredients": "2 huevos, 100g espárragos blancos bote, 1 rebanada pan integral (30g).", "prep": "Tortilla francesa. Espárragos bien escurridos.", "count": 0 },
-      { "id": 302, "name": "Día 2: Crema de Calabacín y Patata", "ingredients": "2 calabacines, 1 patata mediana, chorrito leche desnatada, sal.", "prep": "Pela, hierve 15 min, tritura fino con leche. Haz doble para el día 6.", "count": 0 },
+      { "id": 302, "name": "Día 2: Crema de Calabacín y Patata", "ingredients": "2 calabacines, 1 patata mediana, vaso leche desnatada, sal.", "prep": "Pela, hierve 15 min, tritura fino con leche. Haz doble para el día 6.", "count": 0 },
       { "id": 303, "name": "Día 3: Sushi Salmón (10 piezas)", "ingredients": "8 makis de salmón y 2 nigiris de salmón.", "prep": "Saca 10 min antes del frigo. Sin wasabi, jengibre ni soja.", "count": 0 },
       { "id": 304, "name": "Día 4: Caldo Pollo con Fideos", "ingredients": "30g fideos finos, caldo casero (Día 4 prep).", "prep": "Hervir fideos 3 min en el caldo. Cenar tazón caliente.", "count": 0 },
       { "id": 305, "name": "Día 5: Salmón Ahumado y Queso", "ingredients": "100g salmón ahumado, 1 tarrina queso Burgos 0%, 2 biscotes integrales.", "prep": "Montar frío sobre biscotes. Cena muy ligera.", "count": 0 },
@@ -46,7 +46,7 @@ const initialState = {
       { "id": 309, "name": "Día 9: Ensalada Atún y Canónigos", "ingredients": "Canónigos, 1 lata atún natural, 1 queso Burgos 0%, AOVE.", "prep": "Atún muy escurrido. Aliño muy suave. Masticar mucho.", "count": 0 },
       { "id": 310, "name": "Día 10: Crema de Zanahoria", "ingredients": "300g zanahorias, 1/2 patata, 2 lonchas jamón cocido, sal.", "prep": "Hervir, triturar fino. Jamón cocido picado encima.", "count": 0 },
       { "id": 311, "name": "Día 11: 'Falso Tartar' Antirreflujo", "ingredients": "100g salmón fresco (pre-congelado), 1/2 aguacate, 2 biscotes, AOVE, sal.", "prep": "Picar todo a cuchillo minúsculo. Mezclar suave con AOVE/sal.", "count": 0 },
-      { "id": 312, "name": "Día 12: Puré de Patata con Atún", "ingredients": "1 patata mediana, 1 lata atún natural, chorrito leche desnatada, sal.", "prep": "Patata hervida chafada con leche y atún escurrido. Digestivo.", "count": 0 },
+      { "id": 312, "name": "Día 12: Puré de Patata con Atún", "ingredients": "1 patata mediana, 1 lata atún natural, vaso leche desnatada, sal.", "prep": "Patata hervida chafada con leche y atún escurrido. Digestivo.", "count": 0 },
       { "id": 313, "name": "Día 13: Sushi Atún (10 piezas)", "ingredients": "8 makis de atún y 2 nigiris de atún.", "prep": "Saca 10 min antes del frigo. Sin salsas. Masticar muy bien el arroz.", "count": 0 },
       { "id": 314, "name": "Día 14: Tortilla Calabacín", "ingredients": "2 huevos, 1/2 calabacín rallado.", "prep": "Rallar calabacín, quitar agua con manos. Hacer tortilla.", "count": 0 }
     ]
@@ -77,6 +77,7 @@ const initialState = {
     { "id": 42, "name": "Aceite de Oliva Virgen Extra (AOVE)", "qty": "1 botella", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
     { "id": 43, "name": "Sal", "qty": "1 paquete", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
     { "id": 44, "name": "Fideos finos", "qty": "1 paquete", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
+    { "id": 45, "name": "Café descafeinado Dolce Gusto", "qty": "1 paquete", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
     { "id": 50, "name": "Manzanas", "qty": "1 malla", "checked": false, "cat": "Fruta", "freq": "Semanal" },
     { "id": 51, "name": "Plátanos", "qty": "1 mano", "checked": false, "cat": "Fruta", "freq": "Semanal" },
     { "id": 52, "name": "Calabacines", "qty": "2 unidades", "checked": false, "cat": "Verdura Fresca", "freq": "Semanal" },
