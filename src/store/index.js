@@ -3,6 +3,7 @@ import { reactive, watch } from 'vue';
 const STORAGE_KEY = 'salud_app_data_v2';
 
 const initialState = {
+  activeView: 'desayuno', // Persistencia de la pestaña activa
   startDate: '2026-03-30', // Lunes 30 de Marzo de 2026
   meals: {
     desayuno: [
@@ -80,6 +81,9 @@ watch(store, (newState) => {
 }, { deep: true });
 
 export const actions = {
+  setActiveView(view) {
+    store.activeView = view;
+  },
   incrementMeal(type, id) {
     const meal = store.meals[type].find(m => m.id === id);
     if (meal) meal.count++;

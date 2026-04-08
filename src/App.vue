@@ -1,15 +1,13 @@
 <script setup>
-import { ref } from 'vue';
+import { store, actions } from '@/store';
 import BottomNav from '@/components/organisms/BottomNav.vue';
 import MealsView from '@/pages/MealsView.vue';
 import ShoppingView from '@/pages/ShoppingView.vue';
 import SportsView from '@/pages/SportsView.vue';
 import StatsView from '@/pages/StatsView.vue';
 
-const activeView = ref('desayuno');
-
 const handleNavigation = (view) => {
-  activeView.value = view;
+  actions.setActiveView(view);
   window.scrollTo(0, 0);
 };
 </script>
@@ -17,23 +15,23 @@ const handleNavigation = (view) => {
 <template>
   <div class="app-wrapper">
     <div class="mobile-container">
-      <template v-if="['desayuno', 'comida', 'merienda', 'cena'].includes(activeView)">
-        <MealsView :viewType="activeView" :key="activeView" />
+      <template v-if="['desayuno', 'comida', 'merienda', 'cena'].includes(store.activeView)">
+        <MealsView :viewType="store.activeView" :key="store.activeView" />
       </template>
       
-      <template v-else-if="activeView === 'compra'">
+      <template v-else-if="store.activeView === 'compra'">
         <ShoppingView />
       </template>
       
-      <template v-else-if="activeView === 'deporte'">
+      <template v-else-if="store.activeView === 'deporte'">
         <SportsView />
       </template>
 
-      <template v-else-if="activeView === 'stats'">
+      <template v-else-if="store.activeView === 'stats'">
         <StatsView />
       </template>
 
-      <BottomNav :activeView="activeView" @navigate="handleNavigation" />
+      <BottomNav :activeView="store.activeView" @navigate="handleNavigation" />
     </div>
   </div>
 </template>
