@@ -79,6 +79,7 @@ const initialState = {
     { "id": 44, "name": "Fideos finos", "qty": "1 pack", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
     { "id": 45, "name": "Café descafeinado Dolce Gusto", "qty": "1 pack", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
     { "id": 46, "name": "Quinoa", "qty": "1 pack", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
+    { "id": 47, "name": "Maíz dulce", "qty": "1 pack", "checked": false, "cat": "Despensa", "freq": "Quincenal" },
     { "id": 50, "name": "Manzanas", "qty": "1 malla", "checked": false, "cat": "Fruta", "freq": "Semanal" },
     { "id": 51, "name": "Plátanos", "qty": "1 mano", "checked": false, "cat": "Fruta", "freq": "Semanal" },
     { "id": 52, "name": "Calabacines", "qty": "2 unidades", "checked": false, "cat": "Verdura Fresca", "freq": "Semanal" },
