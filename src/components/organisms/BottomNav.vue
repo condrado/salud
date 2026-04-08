@@ -33,7 +33,6 @@ const navItems = [
           :color="activeView === item.id ? '#ffffff' : '#94a3b8'" 
         />
       </div>
-      <span class="label-v2">{{ item.label }}</span>
     </div>
   </nav>
 </template>
@@ -46,7 +45,7 @@ const navItems = [
   transform: translateX(-50%);
   width: 100%;
   max-width: 430px;
-  height: 64px;
+  height: 44px;
   background: #0f172a; /* Sophisticated deep dark */
   display: flex;
   justify-content: space-around;
