@@ -4,6 +4,7 @@ import BottomNav from '@/components/organisms/BottomNav.vue';
 import MealsView from '@/pages/MealsView.vue';
 import ShoppingView from '@/pages/ShoppingView.vue';
 import SportsView from '@/pages/SportsView.vue';
+import StatsView from '@/pages/StatsView.vue';
 
 const activeView = ref('desayuno');
 
@@ -26,6 +27,10 @@ const handleNavigation = (view) => {
       
       <template v-else-if="activeView === 'deporte'">
         <SportsView />
+      </template>
+
+      <template v-else-if="activeView === 'stats'">
+        <StatsView />
       </template>
 
       <BottomNav :activeView="activeView" @navigate="handleNavigation" />

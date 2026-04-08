@@ -8,11 +8,12 @@ defineProps({
 
 const navItems = [
   { id: 'desayuno', label: 'Cafe', icon: 'coffee' },
-  { id: 'comida', label: 'Comida', icon: 'lunch' },
-  { id: 'merienda', label: 'Fruta', icon: 'apple' },
+  { id: 'comida', label: 'Almuerzo', icon: 'lunch' },
+  { id: 'merienda', label: 'Extra', icon: 'apple' },
   { id: 'cena', label: 'Cena', icon: 'dinner' },
   { id: 'compra', label: 'Shop', icon: 'cart' },
-  { id: 'deporte', label: 'Go', icon: 'bolt' }
+  { id: 'deporte', label: 'Gym', icon: 'bolt' },
+  { id: 'stats', label: 'Stats', icon: 'chart' }
 ];
 </script>
 

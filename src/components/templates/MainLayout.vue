@@ -14,15 +14,15 @@ const currentDateStr = computed(() => {
 const planStatus = computed(() => {
   const today = new Date();
   const start = new Date(store.startDate);
-  const diffTime = start - today;
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffTime = today - start;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-  if (diffDays > 0) {
-    return `Inicia en ${diffDays} días`;
-  } else if (diffDays <= 0 && diffDays > -14) {
-    return `Día ${Math.abs(diffDays) + 1} de 14`;
+  if (diffDays < 0) {
+    return `Inicia en ${Math.abs(diffDays)} días`;
   } else {
-    return 'Reto completado';
+    // Ciclo infinito de 14 días (Día 1 al 14)
+    const dayOfCycle = (diffDays % 14) + 1;
+    return `Día ${dayOfCycle} de 14`;
   }
 });
 </script>
