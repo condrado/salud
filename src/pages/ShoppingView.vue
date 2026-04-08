@@ -26,7 +26,7 @@ const totalItems = computed(() => store.shoppingList.length);
 </script>
 
 <template>
-  <MainLayout title="Logístico Mercadona">
+  <MainLayout title="Compra">
     <div class="shopping-status-bar">
       <div class="stats">
         <strong>{{ totalChecked }}</strong> / {{ totalItems }}
