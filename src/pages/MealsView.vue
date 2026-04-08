@@ -22,7 +22,6 @@ const openInfo = (meal) => {
 <template>
   <MainLayout :title="viewType.charAt(0).toUpperCase() + viewType.slice(1)">
     <div class="meals-list">
-      <p class="summary-text" v-if="meals.length">Elige un plato para marcarlo</p>
       
       <MealCard 
         v-for="meal in meals" 
@@ -41,12 +40,3 @@ const openInfo = (meal) => {
     />
   </MainLayout>
 </template>
-
-<style scoped>
-.summary-text {
-  color: #94a3b8;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-</style>

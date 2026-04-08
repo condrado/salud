@@ -47,19 +47,31 @@ const handleNavigation = (view) => {
   --text-muted: #64748b;
 }
 
-body {
+/* RESET PROFESIONAL */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
-  padding: 0;
+}
+
+html, body {
   background-color: #eaeff2;
   font-family: 'Inter', sans-serif;
   color: var(--text-main);
   overscroll-behavior: none;
 }
 
+#app {
+  /* Altura automática */
+}
+
 .app-wrapper {
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .mobile-container {

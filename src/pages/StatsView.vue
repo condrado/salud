@@ -65,7 +65,6 @@ const ingredientTrends = computed(() => {
       <!-- Análisis de Ingredientes -->
       <section class="stat-section">
         <h3>Alerta de Ingredientes</h3>
-        <p class="section-desc">Ingredientes que más estás repitiendo</p>
         <div class="ingredient-grid">
           <div v-for="[name, count] in ingredientTrends" :key="name" class="trend-pill">
             <span class="trend-name">{{ name }}</span>
@@ -93,7 +92,6 @@ const ingredientTrends = computed(() => {
       <!-- Los menos elegidos -->
       <section class="stat-section">
         <h3>¿Olvidamos estos?</h3>
-        <p class="section-desc">Platos que apenas has probado (Dales una oportunidad)</p>
         <div class="forgotten-grid">
           <div v-for="meal in leastMeals" :key="meal.id" class="forgotten-badge">
             {{ meal.name }}
@@ -155,11 +153,6 @@ h3 {
   color: #1e293b;
 }
 
-.section-desc {
-  font-size: 0.8rem;
-  color: #64748b;
-  margin-bottom: 16px;
-}
 
 .ingredient-grid {
   display: flex;

@@ -53,22 +53,23 @@ const planStatus = computed(() => {
 
 <style scoped>
 .main-layout {
-  min-height: 100vh;
+  min-height: calc(100vh - 64px); /* Restamos el alto del header fijo */
+  background: #f1f5f9; 
+  padding-bottom: 80px; /* Espacio para el footer fijo */
   display: flex;
   flex-direction: column;
-  background: #f1f5f9; /* Soft background to pop cards */
-  padding-bottom: 80px; 
 }
 
 .header {
-  background: #0f172a; /* Mismo color que el footer */
+  background: #0f172a; 
   padding: 14px 0;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 800;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  border-radius: 0 0 24px 24px; /* Simetría con el footer */
-}
+  border-radius: 0 0 24px 24px;}
 
 .header-grid {
   display: flex;
@@ -111,6 +112,6 @@ h1 {
 
 .content {
   flex: 1;
-  padding-top: 16px;
+  padding-top: 80px;
 }
 </style>

@@ -42,14 +42,16 @@ const navItems = [
 .bottom-nav-v2 {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
   height: 64px;
   background: #0f172a; /* Sophisticated deep dark */
   display: flex;
   justify-content: space-around;
   padding-bottom: env(safe-area-inset-bottom, 8px);
-  z-index: 999;
+  z-index: 1000;
   border-radius: 24px 24px 0 0;
 }
 
