@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { store } from '@/store';
+import { store, actions } from '@/store';
 
 defineProps({
   title: { type: String, required: true }
@@ -12,18 +12,8 @@ const currentDateStr = computed(() => {
 });
 
 const planStatus = computed(() => {
-  const today = new Date();
-  const start = new Date(store.startDate);
-  const diffTime = today - start;
-  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-  if (diffDays < 0) {
-    return `Inicia en ${Math.abs(diffDays)} días`;
-  } else {
-    // Ciclo infinito de 14 días (Día 1 al 14)
-    const dayOfCycle = (diffDays % 14) + 1;
-    return `Día ${dayOfCycle} de 14`;
-  }
+  const day = actions.getCycleDay();
+  return day === 0 ? '¡Empieza pronto!' : `Día ${day} de 14`;
 });
 </script>
 

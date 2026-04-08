@@ -6,10 +6,9 @@ import MealCard from '@/components/molecules/MealCard.vue';
 import MealModal from '@/components/organisms/MealModal.vue';
 
 const props = defineProps({
-  viewType: { type: String, required: true } // 'desayuno', 'comida', etc.
+  viewType: { type: String, required: true } // 'desayuno', 'comida', 'merienda', 'cena'
 });
 
-const meals = computed(() => store.meals[props.viewType] || []);
 const activeMeal = ref(null);
 const showModal = ref(false);
 
@@ -17,12 +16,15 @@ const openInfo = (meal) => {
   activeMeal.value = meal;
   showModal.value = true;
 };
+
+const meals = computed(() => {
+  return store.meals[props.viewType] || [];
+});
 </script>
 
 <template>
   <MainLayout :title="viewType.charAt(0).toUpperCase() + viewType.slice(1)">
     <div class="meals-list">
-      
       <MealCard 
         v-for="meal in meals" 
         :key="meal.id"
@@ -40,3 +42,11 @@ const openInfo = (meal) => {
     />
   </MainLayout>
 </template>
+
+<style scoped>
+.meals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Mantengo los 8px de separación que elegiste */
+}
+</style>

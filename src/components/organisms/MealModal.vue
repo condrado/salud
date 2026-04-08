@@ -45,7 +45,7 @@ const emit = defineEmits(['close']);
   display: flex;
   align-items: flex-end; /* Bottom sheet style for mobile */
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .modal-content {

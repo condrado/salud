@@ -48,7 +48,6 @@ const handleDecrement = () => {
   background: white;
   border-radius: 12px;
   padding: 4px 12px; /* Tighter vertical padding */
-  margin-bottom: 6px; 
   display: flex;
   align-items: center;
   justify-content: space-between;

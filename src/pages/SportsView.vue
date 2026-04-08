@@ -13,9 +13,9 @@ import { store } from '@/store';
           <AppIcon name="run" size="40" color="#ffffff" />
         </div>
         <div class="details">
-          <h3>Caminata "Quemagrasas"</h3>
-          <p class="time">45 minutos • 5 días/semana</p>
-          <p class="instruction">Camina como si tuvieras prisa por llegar a una cita. Espalda recta y braceo natural.</p>
+          <h3>Caminata "Paso Vivo"</h3>
+          <p class="time">45 a 50 minutos • 4-5 días/semana</p>
+          <p class="instruction">No pares en escaparates. Tu respiración debe ser agitada pero permitiéndote hablar.</p>
         </div>
       </section>
 
@@ -23,30 +23,34 @@ import { store } from '@/store';
       <section class="exercise-section strength">
         <div class="icon-header-small">
           <AppIcon name="bolt" size="32" color="#4CAF50" />
-          <h3>Circuito de Fuerza (15 min)</h3>
+          <h3>Circuito de Fuerza (10 min)</h3>
         </div>
-        <p class="subtitle">Hazlo justo al llegar de caminar</p>
+        <p class="subtitle">Realizar 3 rondas seguidas tras caminar (2 días/semana)</p>
         
         <div class="exercise-card">
-          <span class="ex-name">Sentadillas (Silla)</span>
-          <span class="ex-reps">3 series de 12 reps</span>
-          <p class="ex-desc">Siéntate y levántate de una silla sin usar las manos.</p>
+          <span class="ex-name">Sentadillas en Silla</span>
+          <span class="ex-reps">12 repeticiones</span>
+          <p class="ex-desc">Siéntate y levántate empujando con los talones y apretando glúteos.</p>
         </div>
 
         <div class="exercise-card">
-          <span class="ex-name">Flexiones de pie</span>
-          <span class="ex-reps">3 series de 10 reps</span>
-          <p class="ex-desc">Apoya las manos en una pared e inclínate hacia ella.</p>
+          <span class="ex-name">Flexiones en Pared</span>
+          <span class="ex-reps">10 repeticiones</span>
+          <p class="ex-desc">A 1 metro de la pared, apoya manos y dobla brazos. Protege tu espalda.</p>
         </div>
 
         <div class="exercise-card">
-          <span class="ex-name">Elevación de rodillas</span>
-          <span class="ex-reps">2 minutos</span>
-          <p class="ex-desc">En el sitio, sube las rodillas al pecho alternándolas.</p>
+          <span class="ex-name">Marcha Estática</span>
+          <span class="ex-reps">1 minuto</span>
+          <p class="ex-desc">En el sitio, sube rodillas con energía y mueve los brazos.</p>
+        </div>
+
+        <div class="stretch-note">
+          <p>🏁 <strong>Final:</strong> 2 min estirando piernas para evitar agujetas.</p>
         </div>
       </section>
 
-      <!-- Normas Sagradas (Integradas para acceso rápido) -->
+      <!-- Normas Sagradas -->
       <section class="rules-section">
         <h3>🛡️ Normas Sagradas</h3>
         <ul>
@@ -98,11 +102,19 @@ import { store } from '@/store';
   margin-top: 8px;
 }
 
+.icon-header-small {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
 .subtitle {
   color: #64748b;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-top: -10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
 .exercise-card {
@@ -116,6 +128,7 @@ import { store } from '@/store';
 .ex-name {
   font-weight: bold;
   color: #2c3e50;
+  font-size: 0.95rem;
 }
 
 .ex-reps {
@@ -131,6 +144,15 @@ import { store } from '@/store';
   margin: 5px 0 0;
 }
 
+.stretch-note {
+  background: #e8f5e9;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #2e7d32;
+}
+
 .rules-section {
   background: #fff5f5;
   border: 1px solid #fed7d7;
@@ -141,6 +163,7 @@ import { store } from '@/store';
 .rules-section h3 {
   color: #c53030;
   margin-top: 0;
+  font-size: 1.1rem;
 }
 
 ul {
@@ -149,7 +172,7 @@ ul {
 }
 
 li {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #4a5568;
   margin-bottom: 10px;
   line-height: 1.4;

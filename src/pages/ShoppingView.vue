@@ -1,13 +1,21 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { store, actions } from '@/store';
 import MainLayout from '@/components/templates/MainLayout.vue';
 import ShoppingItem from '@/components/molecules/ShoppingItem.vue';
 import AppIcon from '@/components/atoms/AppIcon.vue';
 
+const filterFreq = ref('Todos');
+
 const categories = computed(() => {
   const cats = {};
-  store.shoppingList.forEach(item => {
+  
+  const filteredList = store.shoppingList.filter(item => {
+    if (filterFreq.value === 'Todos') return true;
+    return item.freq === filterFreq.value;
+  });
+
+  filteredList.forEach(item => {
     const cat = item.cat || 'Otros';
     if (!cats[cat]) cats[cat] = [];
     cats[cat].push(item);
@@ -31,6 +39,16 @@ const totalItems = computed(() => store.shoppingList.length);
       </button>
     </div>
 
+    <!-- Filtro de Frecuencia -->
+    <div class="filter-bar">
+      <select v-model="filterFreq" class="freq-select">
+        <option value="Todos">Mostrar Todo</option>
+        <option value="Diario">Compra Diaria</option>
+        <option value="Semanal">Compra Semanal</option>
+        <option value="Quincenal">Despensa</option>
+      </select>
+    </div>
+
     <div class="grid-layout">
       <div class="category-chip-container">
         <div class="category-block-mini" v-for="(items, cat) in categories" :key="cat">
@@ -44,6 +62,10 @@ const totalItems = computed(() => store.shoppingList.length);
           </div>
         </div>
       </div>
+      
+      <div v-if="Object.keys(categories).length === 0" class="empty-filter">
+        No hay elementos con frecuencia "{{ filterFreq }}"
+      </div>
     </div>
   </MainLayout>
 </template>
@@ -54,9 +76,30 @@ const totalItems = computed(() => store.shoppingList.length);
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: #f1f5f9;
+  background: white;
   border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.filter-bar {
   margin-bottom: 20px;
+}
+
+.freq-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='flex-direction: column;M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
 }
 
 .stats {
@@ -65,7 +108,7 @@ const totalItems = computed(() => store.shoppingList.length);
 }
 
 .minimal-reset {
-  background: white;
+  background: #fff5f5;
   border: 1px solid #fee2e2;
   color: #ff6b6b;
   padding: 6px 12px;
@@ -87,10 +130,18 @@ const totalItems = computed(() => store.shoppingList.length);
   text-transform: uppercase;
   margin-bottom: 8px;
   letter-spacing: 0.05em;
+  padding-left: 4px;
 }
 
 .compact-list {
   display: grid;
   gap: 6px;
+}
+
+.empty-filter {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  font-size: 0.9rem;
 }
 </style>

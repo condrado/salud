@@ -14,6 +14,7 @@ const handleToggle = () => {
   <div class="compact-shopping-item" :class="{ checked: item.checked }" @click="handleToggle">
     <div class="dot-indicator"></div>
     <span class="item-label">{{ item.name }}</span>
+    <span v-if="item.freq" class="freq-badge" :class="item.freq.toLowerCase()">{{ item.freq }}</span>
   </div>
 </template>
 
@@ -64,5 +65,33 @@ const handleToggle = () => {
 .compact-shopping-item:active {
   transform: translateX(4px);
   background: #f1f5f9;
+}
+
+.freq-badge {
+  margin-left: auto;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.freq-badge.diario {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #ffedd5;
+}
+
+.freq-badge.semanal {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+}
+
+.freq-badge.quincenal {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
 }
 </style>
