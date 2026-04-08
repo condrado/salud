@@ -5,10 +5,14 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/salud/', // Requerido para GitHub Pages (repositorio /salud/)
+  base: '/salud/', 
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    outDir: 'docs', // Cambiamos 'dist' por 'docs'
+    emptyOutDir: true,
+  }
 })

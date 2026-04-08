@@ -24,5 +24,5 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Carpeta donde Vite genera el build
-          branch: gh-pages # Rama donde se publicará la web
+          folder: docs # Cambiado de dist a docs
+          branch: gh-pages
